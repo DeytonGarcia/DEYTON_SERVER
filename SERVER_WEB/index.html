@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Formulario de Registro Valle Grande</title>
+</head>
+<body>
+    <nav>
+        <div class="logo-container">
+            <img src="https://observatorioeducativo.pe/wp-content/uploads/2020/08/instituo-tecnologico-valle-grande.jpg" alt="Tu Logo">
+        </div>
+       
+        <div class="button-container">
+            <a href="index.html">CONTACTO</a>
+        </div>
+    </nav>
+    
+    <div class="registro-container">
+        <div class="imagen-container">
+            <img src="https://vallegrande.edu.pe/wp-content/uploads/2023/04/12.jpeg" alt="Imagen de Fondo">
+        </div>
+        <div class="formulario-container">
+            <h2>REGISTRO VALLE GRANDE</h2>
+            <form action="#" method="post">
+                <label for="carrera">Carrera Profesional</label>
+                <select id="carrera" name="carrera">
+                    <option value="analisis_sistemas">Análisis de Sistemas</option>
+                    <option value="produccion_agraria">Producción Agraria</option>
+                </select>
+
+                <label for="nombres">Nombres y Apellidos</label>
+                <input type="text" id="nombres" name="nombres" required>
+
+                <label for="dni">Número de DNI</label>
+                <input type="text" id="dni" name="dni" required>
+
+                <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+                <label for="correo">Correo Institucional</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="contrasena">Contraseña</label>
+                <div class="contrasena-container">
+                    <input type="password" id="contrasena" name="contrasena" required>
+                    <span id="ojo">&#128065;</span>
+                </div>
+    
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var contrasenaInput = document.getElementById("contrasena");
+                var ojoIcono = document.getElementById("ojo");
+                var formulario = document.getElementById("miFormulario");
+    
+                ojoIcono.addEventListener("click", function() {
+                    if (contrasenaInput.type === "password") {
+                        contrasenaInput.type = "text";
+                        ojoIcono.innerHTML = "&#128064;"; // Icono de ojo cerrado
+                    } else {
+                        contrasenaInput.type = "password";
+                        ojoIcono.innerHTML = "&#128065;"; // Icono de ojo abierto
+                    }
+                });
+    
+                formulario.addEventListener("submit", function(event) {
+                    // Puedes agregar aquí tus comandos de validación o procesamiento
+                    // Por ahora, solo mostraremos una alerta para demostración
+                    alert("Formulario enviado. Puedes agregar lógica de procesamiento aquí.");
+    
+                    // Detener el envío del formulario al servidor para este ejemplo
+                    event.preventDefault();
+                });
+            });
+        </script>
+</html>
